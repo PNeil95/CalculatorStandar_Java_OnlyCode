@@ -307,6 +307,22 @@ public class Calculator extends JFrame implements ActionListener{
 						double result = Double.parseDouble(firstPart)-Double.parseDouble(secondPart);
 						pantalla.setText(Double.toString(result));
 					}
+					
+					if(caracter == '*') {
+						String firstPart = cadena.substring(0,i);
+						String secondPart = cadena.substring(i+1,cadena.length());
+						
+						double result = Double.parseDouble(firstPart)*Double.parseDouble(secondPart);
+						pantalla.setText(Double.toString(result));
+					}
+					
+					if(caracter == '/') {
+						String firstPart = cadena.substring(0,i);
+						String secondPart = cadena.substring(i+1,cadena.length());
+						
+						double result = Double.parseDouble(firstPart) / Double.parseDouble(secondPart);
+						pantalla.setText(Double.toString(result));
+					}
 
 			}
 			
