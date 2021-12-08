@@ -285,6 +285,23 @@ public class Calculator extends JFrame implements ActionListener{
 			pantalla.setText("");
 		}
 		
+		if(e.getSource() == btnIgual) {
+			String cadena = pantalla.getText();
+			
+			for(int i = 0; i<cadena.length(); i++) {
+				
+				char caracter = cadena.charAt(i);
+					//Los char va entre comillas simples
+					if(caracter == '+') {
+						String firstPart = cadena.substring(0,i);
+						String secondPart = cadena.substring(i+1,cadena.length());
+						
+						double result = Double.parseDouble(firstPart)+Double.parseDouble(secondPart);
+						pantalla.setText(Double.toString(result));
+					}
+			}
+			
+		}
 	}
 
 }
