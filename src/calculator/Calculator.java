@@ -35,7 +35,7 @@ public class Calculator extends JFrame implements ActionListener{
 	public Calculator() {
 		//2.Propiedades del formulario
 		base.setLayout(null);
-		setSize(350,400);
+		setSize(350,480);
 		setTitle("Calculator Standar");
 		setVisible(true);
 		
@@ -178,7 +178,7 @@ public class Calculator extends JFrame implements ActionListener{
 				pantalla.setText("4");
 			}
 			else {
-				pantalla.setText(pantalla.getText() + "1");
+				pantalla.setText(pantalla.getText() + "4");
 			}
 		}
 		
@@ -320,8 +320,15 @@ public class Calculator extends JFrame implements ActionListener{
 						String firstPart = cadena.substring(0,i);
 						String secondPart = cadena.substring(i+1,cadena.length());
 						
-						double result = Double.parseDouble(firstPart) / Double.parseDouble(secondPart);
-						pantalla.setText(Double.toString(result));
+						double zero = Double.parseDouble(secondPart);
+						if(zero == 0) {
+							JOptionPane.showMessageDialog(null, "No se puede dividir entre cero");
+						}
+						else {		
+							double result = Double.parseDouble(firstPart) / Double.parseDouble(secondPart);
+							pantalla.setText(Double.toString(result));
+						}
+
 					}
 
 			}
